@@ -1,7 +1,7 @@
 package au.id.tmm.httpConstants
 
-import org.scalatest.FlatSpec
 import au.id.tmm.httpConstants.HttpResponseCode._
+import org.scalatest.FlatSpec
 
 class HttpResponseCodeSpec extends FlatSpec {
 

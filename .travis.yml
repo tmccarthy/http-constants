@@ -1,0 +1,14 @@
+language: java
+
+jdk:
+  - oraclejdk8
+
+script: "./gradlew build releaseIfFinalVersion --info --stacktrace"
+
+after_success:
+ - bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+   - OSSRH_USER: tmccarthy
+

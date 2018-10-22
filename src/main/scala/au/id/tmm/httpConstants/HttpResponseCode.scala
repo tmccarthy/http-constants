@@ -146,7 +146,7 @@ object HttpResponseCode {
     case LoopDetected.code                  => Some(LoopDetected)
     case NotExtended.code                   => Some(NotExtended)
     case NetworkAuthenticationRequired.code => Some(NetworkAuthenticationRequired)
-    case _ => None
+    case _                                  => None
   }
 
 }

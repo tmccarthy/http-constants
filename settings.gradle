@@ -1,2 +1,8 @@
+include 'core', 'argonaut'
+
 rootProject.name = 'httpConstants'
 
+def mavenFriendlyRootProjectName = 'http-constants'
+
+project(':core').name = "$mavenFriendlyRootProjectName-core"
+project(':argonaut').name = "$mavenFriendlyRootProjectName-argonaut"

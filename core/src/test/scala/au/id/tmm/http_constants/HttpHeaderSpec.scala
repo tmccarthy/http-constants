@@ -1,4 +1,4 @@
-package au.id.tmm.httpConstants
+package au.id.tmm.http_constants
 
 import org.scalatest.FlatSpec
 

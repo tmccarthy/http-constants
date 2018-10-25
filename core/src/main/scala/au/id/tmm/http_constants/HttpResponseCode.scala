@@ -1,4 +1,4 @@
-package au.id.tmm.httpConstants
+package au.id.tmm.http_constants
 
 sealed trait HttpResponseCode {
   val code: Int

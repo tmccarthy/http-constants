@@ -1,6 +1,6 @@
-package au.id.tmm.httpConstants
+package au.id.tmm.http_constants
 
-import au.id.tmm.httpConstants.HttpVerb._
+import au.id.tmm.http_constants.HttpVerb._
 import org.scalatest.FlatSpec
 
 class HttpVerbSpec extends FlatSpec {

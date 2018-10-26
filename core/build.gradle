@@ -4,12 +4,25 @@ plugins {
     id 'org.scoverage' version '2.1.0'
 }
 
+description = 'A simple library containing typed constants relating to HTTP, and nothing else!'
+
+extensions.add('myRelease', new au.id.tmm.tmmUtils.build.MyReleasePlugin.MyReleasePluginExtension())
+
+myRelease {
+    githubUser = 'tmccarthy'
+    githubRepoName = 'httpConstants'
+
+    licenceName = 'BSD 3-Clause'
+    licenceUrl = 'https://opensource.org/licenses/BSD-3-Clause'
+
+    developerName = 'Timothy McCarthy'
+    developerEmail = 'ebh042@gmail.com'
+}
+
 apply plugin: 'idea'
 apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: au.id.tmm.tmmUtils.build.MyReleasePlugin.class
-
-description = 'A simple library containing typed constants relating to HTTP, and nothing else!'
 
 repositories {
     mavenCentral()
@@ -88,14 +101,3 @@ checkScoverage {
 }
 
 check.dependsOn(checkScoverage)
-
-myRelease {
-    githubUser = 'tmccarthy'
-    githubRepoName = 'httpConstants'
-
-    licenceName = 'BSD 3-Clause'
-    licenceUrl = 'https://opensource.org/licenses/BSD-3-Clause'
-
-    developerName = 'Timothy McCarthy'
-    developerEmail = 'ebh042@gmail.com'
-}

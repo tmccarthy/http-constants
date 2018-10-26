@@ -1,9 +1,9 @@
 package au.id.tmm.http_constants.argonaut
 
 import argonaut.Argonaut._
-import au.id.tmm.http_constants.{HttpHeader, HttpResponseCode, HttpVerb}
-import org.scalatest.FlatSpec
 import au.id.tmm.http_constants.argonaut.Encoders._
+import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
+import org.scalatest.FlatSpec
 
 class EncodersSpec extends FlatSpec {
 
@@ -21,10 +21,10 @@ class EncodersSpec extends FlatSpec {
     assert(responseCode.asJson === jNumber(424))
   }
 
-  "the http verb encoder" should "encode an http verb" in {
-    val httpVerb: HttpVerb = HttpVerb.GET
+  "the http method encoder" should "encode an http method" in {
+    val httpMethod: HttpMethod = HttpMethod.GET
 
-    assert(httpVerb.asJson === jString("GET"))
+    assert(httpMethod.asJson === jString("GET"))
   }
 
 }

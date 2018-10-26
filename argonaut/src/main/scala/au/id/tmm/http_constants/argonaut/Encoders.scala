@@ -2,7 +2,7 @@ package au.id.tmm.http_constants.argonaut
 
 import argonaut.Argonaut._
 import argonaut.EncodeJson
-import au.id.tmm.http_constants.{HttpHeader, HttpResponseCode, HttpVerb}
+import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
 
 object Encoders {
 
@@ -12,7 +12,7 @@ object Encoders {
   implicit val httpResponseCodeEncoder: EncodeJson[HttpResponseCode] =
     httpResponseCode => httpResponseCode.code.asJson
 
-  implicit val httpVerbEncoder: EncodeJson[HttpVerb] =
-    httpVerb => httpVerb.asString.asJson
+  implicit val httpMethodEncoder: EncodeJson[HttpMethod] =
+    httpMethod => httpMethod.asString.asJson
 
 }

@@ -1,6 +1,6 @@
 package au.id.tmm.http_constants
 
-final case class HttpHeader(asString: String)
+final case class HttpHeader(asString: String) extends AnyVal
 
 //noinspection TypeAnnotation
 object HttpHeader {

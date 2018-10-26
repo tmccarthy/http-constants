@@ -4,7 +4,7 @@ import argonaut.Argonaut._
 import argonaut.EncodeJson
 import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
 
-object Encoders {
+trait Encoders {
 
   implicit val httpHeaderEncoder: EncodeJson[HttpHeader] =
     httpHeader => httpHeader.asString.asJson
@@ -16,3 +16,5 @@ object Encoders {
     httpMethod => httpMethod.asString.asJson
 
 }
+
+object Encoders extends Encoders

@@ -3,7 +3,7 @@ package au.id.tmm.http_constants.argonaut
 import argonaut._
 import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
 
-object Decoders {
+trait Decoders {
 
   implicit val httpHeaderDecoder: DecodeJson[HttpHeader] = Argonaut.jdecode1(HttpHeader.apply)
 
@@ -20,3 +20,5 @@ object Decoders {
     })
 
 }
+
+object Decoders extends Decoders

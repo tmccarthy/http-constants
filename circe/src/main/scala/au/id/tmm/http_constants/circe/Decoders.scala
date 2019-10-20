@@ -13,7 +13,7 @@ trait Decoders {
   implicit val httpMethodDecoder: Decoder[HttpMethod] =
     flatteningDecoder(HttpMethod.fromString, "http method")
 
-  private def flatteningDecoder[A: Decoder, B](parser: A => Option[B], description: String): Decoder[B] =
+  private def flatteningDecoder[A : Decoder, B](parser: A => Option[B], description: String): Decoder[B] =
     Decoder[A].emap { rawValue =>
       parser.apply(rawValue).toRight(s"$rawValue is an unrecognised $description")
     }

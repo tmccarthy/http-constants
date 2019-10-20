@@ -6,15 +6,15 @@ sealed trait HttpMethod {
 
 object HttpMethod {
 
-  case object GET     extends HttpMethod { override val asString = "GET" }
-  case object HEAD    extends HttpMethod { override val asString = "HEAD" }
-  case object POST    extends HttpMethod { override val asString = "POST" }
-  case object PUT     extends HttpMethod { override val asString = "PUT" }
-  case object DELETE  extends HttpMethod { override val asString = "DELETE" }
+  case object GET     extends HttpMethod { override val asString = "GET"     }
+  case object HEAD    extends HttpMethod { override val asString = "HEAD"    }
+  case object POST    extends HttpMethod { override val asString = "POST"    }
+  case object PUT     extends HttpMethod { override val asString = "PUT"     }
+  case object DELETE  extends HttpMethod { override val asString = "DELETE"  }
   case object CONNECT extends HttpMethod { override val asString = "CONNECT" }
   case object OPTIONS extends HttpMethod { override val asString = "OPTIONS" }
-  case object TRACE   extends HttpMethod { override val asString = "TRACE" }
-  case object PATCH   extends HttpMethod { override val asString = "PATCH" }
+  case object TRACE   extends HttpMethod { override val asString = "TRACE"   }
+  case object PATCH   extends HttpMethod { override val asString = "PATCH"   }
 
   def fromString(methodAsString: String): Option[HttpMethod] = methodAsString.toUpperCase match {
     case GET.asString     => Some(GET)

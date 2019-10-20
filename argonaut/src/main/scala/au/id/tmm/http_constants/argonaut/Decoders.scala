@@ -13,11 +13,15 @@ trait Decoders {
   implicit val httpMethodDecoder: DecodeJson[HttpMethod] =
     flatteningDecoder(HttpMethod.fromString, "http method")
 
-  private def flatteningDecoder[A: DecodeJson, B](parser: A => Option[B], description: String): DecodeJson[B] =
-    cursor => cursor.as[A].flatMap(rawValue => parser(rawValue) match {
-      case Some(value) => DecodeResult.ok(value)
-      case None => DecodeResult.fail(s"$rawValue is an unrecognised $description", cursor.history)
-    })
+  private def flatteningDecoder[A : DecodeJson, B](parser: A => Option[B], description: String): DecodeJson[B] =
+    cursor =>
+      cursor
+        .as[A]
+        .flatMap(rawValue =>
+          parser(rawValue) match {
+            case Some(value) => DecodeResult.ok(value)
+            case None        => DecodeResult.fail(s"$rawValue is an unrecognised $description", cursor.history)
+          })
 
 }
 

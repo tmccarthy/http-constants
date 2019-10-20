@@ -12,8 +12,8 @@ class HttpMethodSpec extends FlatSpec {
   }
 
   def testLookup(methodAsString: String, expectedMethod: HttpMethod): Unit = {
-    val methodStringUppercase = methodAsString.toUpperCase
-    val methodStringLowercase = methodAsString.toLowerCase
+    val methodStringUppercase   = methodAsString.toUpperCase
+    val methodStringLowercase   = methodAsString.toLowerCase
     val methodStringCapitalised = methodStringLowercase.capitalize
 
     it should s"""lookup $expectedMethod for "$methodStringUppercase"""" in {

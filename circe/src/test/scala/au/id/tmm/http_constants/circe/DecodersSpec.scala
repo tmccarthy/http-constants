@@ -15,7 +15,8 @@ class DecodersSpec extends FlatSpec {
   }
 
   it should "fail to decode an invalid http response" in {
-    assert(Json.fromInt(-1).as[HttpResponseCode].left.map(_.message) === Left("-1 is an unrecognised http response code"))
+    assert(
+      Json.fromInt(-1).as[HttpResponseCode].left.map(_.message) === Left("-1 is an unrecognised http response code"))
   }
 
   "the http method decoder" should "decode an http method" in {
@@ -27,7 +28,8 @@ class DecodersSpec extends FlatSpec {
   }
 
   it should "fail to decode an invalid http method" in {
-    assert(Json.fromString("invalid").as[HttpMethod].left.map(_.message) === Left("invalid is an unrecognised http method"))
+    assert(
+      Json.fromString("invalid").as[HttpMethod].left.map(_.message) === Left("invalid is an unrecognised http method"))
   }
 
 }

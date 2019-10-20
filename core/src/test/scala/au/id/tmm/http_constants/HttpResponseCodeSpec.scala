@@ -11,11 +11,10 @@ class HttpResponseCodeSpec extends FlatSpec {
     assert(HttpResponseCode.fromCode(0) === None)
   }
 
-  private def testCodeLookup(code: Int, expectedCode: HttpResponseCode): Unit = {
+  private def testCodeLookup(code: Int, expectedCode: HttpResponseCode): Unit =
     it should s"lookup $expectedCode for $code" in {
       assert(HttpResponseCode.fromCode(code) === Some(expectedCode))
     }
-  }
 
   testCodeLookup(100, Continue)
   testCodeLookup(101, SwitchingProtocol)

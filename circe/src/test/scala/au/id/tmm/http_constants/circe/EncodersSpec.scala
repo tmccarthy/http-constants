@@ -1,29 +1,30 @@
-package au.id.tmm.http_constants.argonaut
+package au.id.tmm.http_constants.circe
 
-import argonaut.Argonaut._
 import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
+import io.circe.Json
+import io.circe.syntax.EncoderOps
 import org.scalatest.FlatSpec
 
 class EncodersSpec extends FlatSpec {
 
   "the http header encoder" should "encode an http header" in {
-    assert(HttpHeader.Age.asJson === jString("Age"))
+    assert(HttpHeader.Age.asJson === Json.fromString("Age"))
   }
 
   it should "encode a custom http header" in {
-    assert(HttpHeader("X-Custom-Header").asJson === jString("X-Custom-Header"))
+    assert(HttpHeader("X-Custom-Header").asJson === Json.fromString("X-Custom-Header"))
   }
 
   "the http response code encoder" should "encode an http response code" in {
     val responseCode: HttpResponseCode = HttpResponseCode.FailedDependency
 
-    assert(responseCode.asJson === jNumber(424))
+    assert(responseCode.asJson === Json.fromInt(424))
   }
 
   "the http method encoder" should "encode an http method" in {
     val httpMethod: HttpMethod = HttpMethod.GET
 
-    assert(httpMethod.asJson === jString("GET"))
+    assert(httpMethod.asJson === Json.fromString("GET"))
   }
 
 }

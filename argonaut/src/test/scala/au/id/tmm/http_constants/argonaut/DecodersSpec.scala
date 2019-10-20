@@ -2,7 +2,6 @@ package au.id.tmm.http_constants.argonaut
 
 import argonaut.Argonaut._
 import argonaut.DecodeResult
-import au.id.tmm.http_constants.argonaut.Decoders._
 import au.id.tmm.http_constants.{HttpHeader, HttpMethod, HttpResponseCode}
 import org.scalatest.FlatSpec
 

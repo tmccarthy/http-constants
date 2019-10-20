@@ -16,7 +16,7 @@ final case class ProjectSettingsHelper private (
   githubUserEmail: String = "ebh042@gmail.com",
   githubUserWebsite: String = "http://tmm.id.au",
 
-  primaryScalaVersion: String = "2.13.1", // Change these in the circleci file if you change them here
+  primaryScalaVersion: String = "2.13.0", // Change these in the circleci file if you change them here
   otherScalaVersions: List[String] = List("2.12.8"), // Change these in the circleci file if you change them here
 ) {
 

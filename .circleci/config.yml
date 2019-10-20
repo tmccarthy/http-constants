@@ -14,7 +14,7 @@ use_scala_2_12: &use_scala_2_12
 
 use_scala_2_13: &use_scala_2_13
   environment:
-    SCALA_VERSION: 2.13.1
+    SCALA_VERSION: 2.13.0
 
 use_environment: &use_environment
   working_directory: ~/repo
